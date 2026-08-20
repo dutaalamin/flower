@@ -1,99 +1,82 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download } from 'lucide-react';
-import ditaPhoto from '../images/dita.jpeg';
 
-const CV_URL = process.env.PUBLIC_URL + '/CV - Adita Nurshabrina.pdf';
-
-const Hero = () => {
-  const handleScroll = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+const Hero = ({ onCatalogClick }) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-28 lg:py-0 bg-[#fcfbfa] overflow-hidden" id="home">
-      
-      {/* Background blobs */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-rose-50/60 rounded-full blur-3xl -ml-48 -mt-48 pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-pink-50/40 rounded-full blur-3xl -mr-48 -mb-48 pointer-events-none"></div>
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
-        
-        {/* Left Column — Content */}
-        <div className="w-full lg:w-[58%] flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-          
-          {/* Name — big display typography in solid pink */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mb-6"
-          >
-            <h1 className="font-black leading-[0.95] tracking-tight text-pink-400 text-[clamp(3rem,8vw,5.5rem)]">
-              Adita<br />Nurshabrina
-            </h1>
-          </motion.div>
-
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="text-stone-500 text-base sm:text-lg max-w-md leading-relaxed mb-10 font-medium mx-auto lg:mx-0"
-          >
-            Detail-oriented professional with expertise in document management, office coordination, and operational support — turning complexity into clarity.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-wrap justify-center lg:justify-start gap-4 no-print"
-          >
-            <button
-              onClick={() => handleScroll('experience')}
-              className="px-8 py-4 bg-stone-900 hover:bg-rose-950 text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-stone-200/60 active:scale-95 hover:-translate-y-0.5"
-            >
-              View Experience
-            </button>
-            <a
-              href={CV_URL}
-              download="CV - Adita Nurshabrina.pdf"
-              className="px-8 py-4 bg-white border-2 border-rose-200 hover:border-rose-400 hover:text-rose-700 text-stone-700 font-bold text-xs uppercase tracking-widest rounded-full transition-all duration-300 flex items-center gap-2 active:scale-95 shadow-sm hover:-translate-y-0.5"
-            >
-              <Download className="w-4 h-4" />
-              MY CV
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Right Column — Clean Circular Portrait */}
-        <div className="w-full lg:w-[42%] flex justify-center lg:justify-end">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative select-none"
-          >
-            {/* Main Image Container — Circular, borderless, clean */}
-            <div className="w-60 h-60 sm:w-68 sm:h-68 md:w-76 md:h-76 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-lg bg-stone-100">
-              <img
-                src={ditaPhoto}
-                alt="Adita Nurshabrina"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </motion.div>
-        </div>
-
+    <section
+      className="relative flex items-center justify-center overflow-hidden"
+      id="home"
+      style={{ minHeight: '100vh' }}
+    >
+      {/* Full-screen background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=1920"
+          alt="Beautiful flower bouquet arrangement"
+          className="w-full h-full object-cover"
+        />
+        {/* Subtle dark overlay for text readability without making it gloomy */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
       </div>
 
-      {/* Scroll indicator — bottom center */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-30 no-print">
-        <ArrowDown className="w-3.5 h-3.5 text-stone-400 animate-bounce" />
-        <span className="text-[9px] font-bold uppercase tracking-widest text-stone-400">Scroll</span>
+      {/* Center content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-32 max-w-3xl mx-auto">
+
+
+
+        {/* Store name */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-5"
+        >
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.35em] text-white/90 drop-shadow-md">
+            Handmade Flowers Bouquet
+          </span>
+        </motion.div>
+
+        {/* Main tagline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.35 }}
+          className="font-playfair text-white lowercase leading-none mb-6 drop-shadow-xl"
+          style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+        >
+          bunga cerita
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="font-serif-lux italic text-white/90 text-base sm:text-lg md:text-xl tracking-wide mb-10 drop-shadow-md"
+        >
+          #tellstoriesthroughflowers
+        </motion.p>
+
+
+
+        {/* CTA buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
+          className="flex flex-wrap justify-center gap-4 no-print"
+        >
+          <button
+            onClick={onCatalogClick}
+            className="px-9 py-3.5 bg-white hover:bg-stone-100 text-[#1a6e4d] font-bold text-[11px] uppercase tracking-[0.18em] rounded-full transition-all duration-300 shadow-xl active:scale-95 hover:-translate-y-0.5"
+          >
+            Explore Catalog
+          </button>
+
+        </motion.div>
       </div>
+
 
     </section>
   );

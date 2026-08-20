@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;550;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,31 +7,98 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #ffffff;
+    background-color: #fcfbfa;
     -webkit-tap-highlight-color: transparent;
   }
   
   body {
-    background-color: #fcfbfa; /* Warm cream base */
-    color: #1c1917; /* Deep stone brown/slate for softer readability */
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    background-color: #fcfbfa; /* Soft warm cream */
+    color: #4a4543; /* Soft dark stone for body text */
+    font-family: 'Plus Jakarta Sans', sans-serif;
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
+    color: #0a2418; /* Deep luxury green */
   }
 }
 
-/* Premium Glassmorphism Cards */
+/* Elegant Font Classes */
+.font-script {
+  font-family: 'Pinyon Script', cursive;
+}
+
+.font-serif-lux {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom Soft Colors */
+.bg-cream-50 {
+  background-color: #fdfcfb;
+}
+.bg-cream-100 {
+  background-color: #faf7f2;
+}
+.bg-cream-200 {
+  background-color: #f5f0e6;
+}
+
+.text-peony-600 {
+  color: #1e6347;
+}
+.text-peony-800 {
+  color: #14422e;
+}
+.text-peony-950 {
+  color: #0a2418;
+}
+
+.bg-peony-50 {
+  background-color: #f2f7f5;
+}
+.bg-peony-100 {
+  background-color: #e0efe9;
+}
+.bg-peony-600 {
+  background-color: #1e6347;
+}
+.bg-peony-700 {
+  background-color: #18523a;
+}
+.bg-peony-950 {
+  background-color: #0a2418;
+}
+
+/* Border styles */
+.border-peony-100 {
+  border-color: #e0efe9;
+}
+.border-peony-200 {
+  border-color: #c2e0d3;
+}
+
+/* Premium Glassmorphic Cards */
+.glass-nav {
+  background: rgba(253, 252, 250, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-b: 1px solid rgba(30, 99, 71, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+}
+
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(251, 207, 232, 0.3); /* Extremely soft pink/rose tint */
-  box-shadow: 0 10px 32px 0 rgba(220, 38, 127, 0.02);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 224, 211, 0.4);
+  box-shadow: 0 10px 30px rgba(30, 99, 71, 0.02);
 }
 
 .glass-card-hover {
@@ -39,121 +106,145 @@
 }
 
 .glass-card-hover:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(244, 63, 94, 0.3); /* Rose-500 tint */
-  box-shadow: 0 20px 40px -15px rgba(244, 63, 94, 0.1);
-}
-
-/* Subtle Premium Gradients */
-.text-gradient-rose-gold {
-  background: linear-gradient(135deg, #4c0519 10%, #be123c 50%, #db2777 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.bg-soft-radial {
-  background: radial-gradient(circle at 10% 20%, rgba(253, 244, 245, 0.6) 0%, rgba(255, 255, 255, 0.8) 90%);
-}
-
-/* Timeline Custom Styles */
-.timeline-dot {
-  position: relative;
-}
-.timeline-dot::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #f43f5e;
-  border: 3px solid #ffe4e6;
-  left: -6px;
-  top: 6px;
-  transition: all 0.3s ease;
-}
-
-.timeline-dot:hover::after {
-  background-color: #be123c;
-  transform: scale(1.3);
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(30, 99, 71, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(30, 99, 71, 0.08);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fbfbfa;
+  background: #fdfcfb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f1ede9;
-  border-radius: 4px;
+  background: #ecdcd3;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fda4af;
+  background: #a9ccbe;
 }
 
-/* Print Layout Optimization (Recruiter Friendly Resume Generator) */
-@media print {
-  @page {
-    size: A4;
-    margin: 1.5cm;
-  }
-  
-  body {
-    background: white !important;
-    color: #111111 !important;
-    font-size: 11pt !important;
-    line-height: 1.5 !important;
-  }
+/* Wave or Soft Dividers */
+.divider-gradient {
+  background: linear-gradient(to right, transparent, rgba(30, 99, 71, 0.15) 50%, transparent);
+}
 
-  /* Hide navigation, buttons, scrollbars, decorations */
-  header, nav, footer, button, .no-print, .social-icon, .cta-button {
+/* Custom Animation Utility */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Hero Linen Texture Background — Beverly Florist Style */
+.hero-linen {
+  background-color: #f0ece4;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(185, 160, 130, 0.06) 3px,
+      rgba(185, 160, 130, 0.06) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(185, 160, 130, 0.06) 3px,
+      rgba(185, 160, 130, 0.06) 4px
+    );
+}
+
+.linen-texture {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(160, 140, 110, 0.025) 8px,
+      rgba(160, 140, 110, 0.025) 9px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(160, 140, 110, 0.025) 8px,
+      rgba(160, 140, 110, 0.025) 9px
+    );
+}
+
+/* Floating WhatsApp Button */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.wa-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+  background-color: #20bd5a;
+}
+
+.wa-float:active {
+  transform: scale(0.95);
+}
+
+.wa-float svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+}
+
+/* Pulse ring behind WA button */
+@keyframes wa-pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.3);
+  animation: wa-pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+/* Print optimizations */
+@media print {
+  header, footer, button, .no-print {
     display: none !important;
   }
-
-  /* Convert layout for clean standard resume presentation */
-  .main-content {
-    margin-left: 0 !important;
-    padding: 0 !important;
-  }
-
-  .print-page-break {
-    page-break-before: always;
-  }
-
-  .glass-card {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* Grid layouts become stacked or plain columns */
-  .grid {
-    display: block !important;
-  }
-
-  .skills-grid {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-  }
-
-  .skills-tag {
-    border: 1px solid #cccccc !important;
-    background: white !important;
-    color: black !important;
-    padding: 2px 6px !important;
-    font-size: 9pt !important;
-  }
-
-  /* Timeline line adjustment */
-  .timeline-line {
-    border-left: 1px solid #cccccc !important;
+  body {
+    background: white;
+    color: black;
   }
 }

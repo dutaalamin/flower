@@ -1,84 +1,56 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Award, Briefcase, FileSpreadsheet, ShieldCheck } from 'lucide-react';
+import { LOGO_URL } from '../data/mockData';
 
 const About = () => {
-  const highlights = [
-    {
-      icon: <Award className="w-5 h-5 text-rose-600" />,
-      title: "Public Administration Graduate",
-      description: "Holds a Bachelor of Public Administration degree, offering deep knowledge of regulatory frameworks, public systems, and governance structures."
-    },
-    {
-      icon: <Briefcase className="w-5 h-5 text-rose-600" />,
-      title: "Administrative Operations",
-      description: "Experienced in managing high-volume operations, official archives, drafting correspondence, and facilitating data workflows."
-    },
-    {
-      icon: <FileSpreadsheet className="w-5 h-5 text-rose-600" />,
-      title: "Office Coordination",
-      description: "Adept at scheduling high-level meetings, organizing corporate schedules, and coordinating administrative details across departments."
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5 text-rose-600" />,
-      title: "Resilient & Organized",
-      description: "Thrives in fast-paced, high-pressure environments by applying structured organizational methods and maintaining top attention to detail."
-    }
-  ];
-
   return (
-    <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="about">
+    <section className="py-20 sm:py-28 bg-white" id="about">
+      <div className="max-w-5xl mx-auto px-6 sm:px-12">
 
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center text-center mb-14"
-      >
-        <h2 className="text-4xl md:text-5xl font-black text-stone-900 tracking-tight">
-          About Me
-        </h2>
-        <div className="w-14 h-1 bg-gradient-to-r from-rose-300 to-rose-500 rounded-full mt-4"></div>
-      </motion.div>
+        {/* Simple centered layout — no grid, no icons, just the story */}
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
+          <div className="w-20 h-20 rounded-full overflow-hidden border border-stone-200 shadow-sm mb-6">
+            <img src={LOGO_URL} alt="Bunga Cerita" className="w-full h-full object-cover" />
+          </div>
+          <h2 className="font-serif-lux text-2xl sm:text-3xl lg:text-4xl text-peony-950 leading-snug mb-5">
+            Tentang Bunga Cerita
+          </h2>
+          <p className="text-stone-500 text-sm leading-relaxed mb-4">
+            Bunga Cerita adalah usaha buket bunga handmade yang berbasis di Tangerang, dekat kampus UPH, BINUS, UMN, dan BSD. Kami membuat setiap rangkaian bunga secara handmade dari bahan flanel dan rajut berkualitas tinggi.
+          </p>
+          <p className="text-stone-500 text-sm leading-relaxed mb-4">
+            Setiap buket dibuat khusus sesuai pesanan — custom only. Kamu bisa pilih jenis bunga, warna, ukuran, dan desain wrapping sesuai keinginan. Tinggal DM kami di Instagram atau chat via WhatsApp, dan kami akan bantu buatkan buket yang pas untuk momen kamu.
+          </p>
+          <p className="text-stone-400 text-xs italic">
+            #tellstoriesthroughflowers
+          </p>
+        </div>
 
-      {/* Bio */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-stone-600 text-base sm:text-lg leading-relaxed font-medium mb-12"
-      >
-        I am a dedicated, service-oriented graduate of Public Administration with practical internship and organizational leadership experience. I specialize in building tidy digital records, structuring meeting operations, drafting official documentation, and providing crucial administrative support to corporate and regional institutions.
-      </motion.p>
+        {/* Three simple info columns — clean, no tacky icons */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
+          <div className="text-center">
+            <p className="font-serif-lux text-4xl sm:text-5xl font-bold text-peony-600 mb-2">100%</p>
+            <p className="text-xs sm:text-sm text-stone-600 font-semibold mb-1">Handmade</p>
+            <p className="text-[11px] text-stone-400 leading-relaxed">
+              Setiap kelopak bunga dibentuk satu per satu oleh tangan, bukan produksi massal. Hasilnya unik dan personal.
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="font-serif-lux text-4xl sm:text-5xl font-bold text-peony-600 mb-2">∞</p>
+            <p className="text-xs sm:text-sm text-stone-600 font-semibold mb-1">Tahan Lama</p>
+            <p className="text-[11px] text-stone-400 leading-relaxed">
+              Tidak seperti bunga asli yang layu dalam hitungan hari, buket kami bisa disimpan bertahun-tahun sebagai kenang-kenangan.
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="font-serif-lux text-4xl sm:text-5xl font-bold text-peony-600 mb-2">DM</p>
+            <p className="text-xs sm:text-sm text-stone-600 font-semibold mb-1">Custom Order</p>
+            <p className="text-[11px] text-stone-400 leading-relaxed">
+              Cukup kirim DM ke Instagram kami atau chat via WhatsApp. Konsultasi desain gratis, tanpa minimum order.
+            </p>
+          </div>
+        </div>
 
-      {/* 4-pillar highlights grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-        {highlights.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="flex flex-col gap-3 p-5 bg-white hover:bg-rose-50/30 rounded-2xl border border-stone-100 hover:border-rose-100 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1"
-          >
-            <div className="p-2.5 bg-rose-50 rounded-xl self-start">
-              {item.icon}
-            </div>
-            <div className="space-y-1.5">
-              <h4 className="text-sm font-bold text-stone-800 tracking-tight leading-snug">
-                {item.title}
-              </h4>
-              <p className="text-xs text-stone-500 leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
       </div>
-
     </section>
   );
 };
