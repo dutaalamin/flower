@@ -9,7 +9,7 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('price-asc');
+  const [sortBy, setSortBy] = useState('popular');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(PRODUCTS);
@@ -63,10 +63,13 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
       result.sort((a, b) => (b.rating || 0) - (a.rating || 0));
     } else if (sortBy === 'newest') {
       result.sort((a, b) => b.id - a.id);
+    } else if (sortBy === 'name-asc') {
+      result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === 'name-desc') {
+      result.sort((a, b) => b.name.localeCompare(a.name));
     } else {
       // Default fallback (if no sorting is selected or 'Default' option is active)
-      // Sort from lowest price to highest price by default
-      result.sort((a, b) => a.price - b.price);
+      result.sort((a, b) => (b.rating || 0) - (a.rating || 0));
     }
 
     if (isPreview) {
@@ -201,10 +204,11 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
                     onChange={(e) => setSortBy(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] bg-white text-stone-700 cursor-pointer transition-all"
                   >
-                    <option value="price-asc">Default (Low to High)</option>
-                    <option value="popular">Popularity</option>
-                    <option value="newest">Newest</option>
-                    <option value="price-desc">Price: High to Low</option>
+                    <option value="popular">Default (Best Seller)</option>
+                    <option value="price-desc">Highest Price</option>
+                    <option value="price-asc">Lowest Price</option>
+                    <option value="name-asc">A - Z</option>
+                    <option value="name-desc">Z - A</option>
                   </select>
                   
                   {/* Reset Button */}
@@ -214,7 +218,7 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
                       setSelectedCategory('All');
                       setMinPrice('');
                       setMaxPrice('');
-                      setSortBy('price-asc');
+                      setSortBy('popular');
                     }}
                     type="button"
                     title="Reset Filters"
