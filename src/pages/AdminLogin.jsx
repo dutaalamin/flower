@@ -30,7 +30,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="fixed inset-0 bg-stone-50 flex flex-col items-center justify-center p-6 overflow-hidden z-50">
       
       {/* Decorative Background Elements */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#1a6e4d]/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -45,12 +45,12 @@ const AdminLogin = () => {
         <span className="hidden sm:inline">Return to Store</span>
       </Link>
 
-      <div className="w-full max-w-[440px] z-10 relative -mt-10">
+      <div className="w-full max-w-[540px] z-10 relative">
         {/* Login Card */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-2xl shadow-stone-200/50 border border-white p-8 sm:p-10">
-          <div className="text-center mb-8">
-            <h1 className="font-playfair text-3xl text-[#14422e] font-bold">Welcome Back</h1>
-            <p className="text-stone-500 mt-2 text-sm">Please sign in to continue.</p>
+        <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl shadow-stone-200/50 border border-white p-10 sm:p-14">
+          <div className="text-center mb-10">
+            <h1 className="font-playfair text-4xl text-[#14422e] font-bold tracking-tight">Welcome Back</h1>
+            <p className="text-stone-500 mt-3 text-base">Please sign in to continue.</p>
           </div>
 
           {error && (
@@ -60,9 +60,9 @@ const AdminLogin = () => {
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-5">
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2 pl-1">
+              <label className="block text-[11px] font-bold uppercase tracking-widest text-stone-400 mb-2.5 pl-1">
                 Email Address
               </label>
               <div className="relative group">
@@ -71,15 +71,15 @@ const AdminLogin = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] focus:ring-4 focus:ring-[#1a6e4d]/10 bg-white/50 focus:bg-white transition-all placeholder:text-stone-300"
+                  className="w-full pl-14 pr-5 py-4 rounded-2xl border border-stone-200 text-base focus:outline-none focus:border-[#1a6e4d] focus:ring-4 focus:ring-[#1a6e4d]/10 bg-white/50 focus:bg-white transition-all placeholder:text-stone-300"
                   placeholder="name@example.com"
                 />
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 group-focus-within:text-[#1a6e4d] transition-colors" />
+                <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 group-focus-within:text-[#1a6e4d] transition-colors" />
               </div>
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2 pl-1">
+              <label className="block text-[11px] font-bold uppercase tracking-widest text-stone-400 mb-2.5 pl-1">
                 Password
               </label>
               <div className="relative group">
@@ -88,20 +88,20 @@ const AdminLogin = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] focus:ring-4 focus:ring-[#1a6e4d]/10 bg-white/50 focus:bg-white transition-all placeholder:text-stone-300"
+                  className="w-full pl-14 pr-5 py-4 rounded-2xl border border-stone-200 text-base focus:outline-none focus:border-[#1a6e4d] focus:ring-4 focus:ring-[#1a6e4d]/10 bg-white/50 focus:bg-white transition-all placeholder:text-stone-300"
                   placeholder="••••••••"
                 />
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 group-focus-within:text-[#1a6e4d] transition-colors" />
+                <Lock className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 group-focus-within:text-[#1a6e4d] transition-colors" />
               </div>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 mt-6 bg-[#1a6e4d] hover:bg-[#14422e] text-white rounded-2xl text-sm font-bold uppercase tracking-widest transition-all shadow-lg shadow-[#1a6e4d]/25 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 group"
+              className="w-full py-5 mt-8 bg-[#1a6e4d] hover:bg-[#14422e] text-white rounded-2xl text-sm font-bold uppercase tracking-widest transition-all shadow-xl shadow-[#1a6e4d]/25 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 group"
             >
               {loading ? (
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-6 h-6 animate-spin" />
               ) : (
                 <>
                   Sign In
