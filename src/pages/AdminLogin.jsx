@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
-import { Lock, Mail, Loader2 } from 'lucide-react';
+import { Lock, Mail, Loader2, ArrowLeft } from 'lucide-react';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -30,8 +30,16 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfbfa] flex items-center justify-center px-6">
-      <div className="w-full max-w-[480px] bg-white rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 p-10 sm:p-12 -mt-24">
+    <div className="min-h-screen bg-[#fcfbfa] flex flex-col items-center justify-center px-6">
+      
+      {/* Brand / Logo */}
+      <div className="mb-8 text-center -mt-24">
+        <Link to="/" className="font-playfair text-3xl font-bold text-[#14422e] tracking-tight hover:text-[#1a6e4d] transition-colors">
+          bunga cerita
+        </Link>
+      </div>
+
+      <div className="w-full max-w-[480px] bg-white rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 p-10 sm:p-12">
         <div className="text-center mb-10">
           <h1 className="font-playfair text-4xl text-[#14422e] mb-3 font-bold">Admin Login</h1>
           <p className="text-stone-500 text-sm sm:text-base">Masuk untuk mengelola katalog Bunga Cerita</p>
@@ -86,6 +94,13 @@ const AdminLogin = () => {
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Login to Dashboard'}
           </button>
         </form>
+
+        {/* Back to Home Link */}
+        <div className="mt-8 text-center">
+          <Link to="/" className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-400 uppercase tracking-wider hover:text-[#1a6e4d] transition-colors">
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Store
+          </Link>
+        </div>
       </div>
     </div>
   );
