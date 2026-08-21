@@ -27,6 +27,8 @@ function ScrollToTop() {
 
 function AppContent() {
   const [showWaTooltip, setShowWaTooltip] = useState(true);
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -147,7 +149,7 @@ function AppContent() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      {!isAdminRoute && <Footer />}
 
       {/* Shopping Cart Drawer */}
       <CartDrawer 
