@@ -89,22 +89,22 @@ const About = () => {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
           <div className="text-center md:text-left">
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">500+</p>
-            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Happy Customers</p>
+            <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">500+</p>
+            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Happy Customers</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">1K+</p>
-            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Bouquets Crafted</p>
+            <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">1K+</p>
+            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Bouquets Crafted</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">100%</p>
-            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Handmade</p>
+            <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">100%</p>
+            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Handmade</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">5.0</p>
-            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Average Rating</p>
+            <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">5.0</p>
+            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Average Rating</p>
           </div>
         </div>
       </div>
