@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Catalog from './components/Catalog';
 import About from './components/About';
-import TrackOrder from './components/TrackOrder';
+import ProductDetail from './pages/ProductDetail';
+import CheckoutPage from './pages/Checkout';
 import Footer from './components/Footer';
+import TermsOfService from './pages/TermsOfService';
 
 import CartDrawer from './components/CartDrawer';
-import ProductDetailModal from './components/ProductDetailModal';
-import CheckoutModal from './components/CheckoutModal';
 
 // Helper component to scroll window to top on route change
 function ScrollToTop() {
@@ -35,8 +35,6 @@ function AppContent() {
 
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   // Cart Functions
   const handleAddToCart = (product, quantity = 1, wrappingOption = 'Default (Cocok Dengan Foto)') => {
@@ -81,6 +79,7 @@ function AppContent() {
 
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-[#fcfbfa] text-stone-750 font-sans flex flex-col scroll-smooth">
@@ -99,7 +98,6 @@ function AppContent() {
             path="/" 
             element={
               <HomePage 
-                onProductSelect={(product) => setSelectedProduct(product)} 
                 onAddToCart={handleAddToCart}
               />
             } 
@@ -108,9 +106,27 @@ function AppContent() {
             path="/catalog" 
             element={
               <Catalog 
-                onProductSelect={(product) => setSelectedProduct(product)} 
                 onAddToCart={handleAddToCart}
                 isPreview={false}
+              />
+            } 
+          />
+          <Route 
+            path="/product/:id" 
+            element={
+              <ProductDetail 
+                addToCart={handleAddToCart}
+              />
+            } 
+          />
+          <Route 
+            path="/checkout" 
+            element={
+              <CheckoutPage 
+                cart={cart}
+                clearCart={handleClearCart}
+                updateQuantity={handleUpdateQuantity}
+                removeFromCart={handleRemoveFromCart}
               />
             } 
           />
@@ -119,8 +135,8 @@ function AppContent() {
             element={<About />} 
           />
           <Route 
-            path="/track-order" 
-            element={<TrackOrder />} 
+            path="/terms" 
+            element={<TermsOfService />} 
           />
         </Routes>
       </main>
@@ -137,24 +153,8 @@ function AppContent() {
         removeFromCart={handleRemoveFromCart}
         onCheckoutClick={() => {
           setCartOpen(false);
-          setCheckoutOpen(true);
+          navigate('/checkout');
         }}
-      />
-
-      {/* Product Detail Modal */}
-      <ProductDetailModal 
-        product={selectedProduct}
-        isOpen={!!selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        addToCart={handleAddToCart}
-      />
-
-      {/* Checkout Info Modal */}
-      <CheckoutModal 
-        isOpen={checkoutOpen}
-        onClose={() => setCheckoutOpen(false)}
-        cart={cart}
-        clearCart={handleClearCart}
       />
 
       {/* Floating WhatsApp Button */}
@@ -164,7 +164,7 @@ function AppContent() {
           className={`bg-white px-4 py-2 rounded-t-xl rounded-l-xl rounded-br-sm shadow-[0_4px_20px_-4px_rgba(0,0,0,0.15)] border border-stone-100 transition-all duration-500 origin-right hidden sm:block
             ${showWaTooltip ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0'}`}
         >
-          <p className="text-[11px] font-bold text-stone-700 tracking-wide uppercase">
+          <p className="text-[11px] font-raleway font-bold text-stone-700 tracking-wider uppercase">
             Order Now
           </p>
         </div>

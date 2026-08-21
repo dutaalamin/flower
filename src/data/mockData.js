@@ -10,7 +10,7 @@ export const PRODUCTS = [
     price: 150000,
     rating: 5.0,
     reviews: 32,
-    image: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=600",
+    image: "https://www.solawoodflowers.com/cdn/shop/files/custom-extra-large-cascade-bouquet-922894.jpg?v=1724147821",
     badge: "Best Seller",
     description: "Buket handmade ukuran besar dengan pilihan bunga flanel premium. Cocok untuk hadiah wisuda, ulang tahun, atau momen spesial lainnya.",
     details: {
@@ -27,7 +27,7 @@ export const PRODUCTS = [
     price: 100000,
     rating: 4.9,
     reviews: 45,
-    image: "https://images.unsplash.com/photo-1494336956603-39a3f0e3ae12?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=600",
     badge: "",
     description: "Buket handmade ukuran sedang, pas untuk kado anniversary, hari ibu, atau sekadar memberi kejutan manis.",
     details: {
@@ -61,7 +61,7 @@ export const PRODUCTS = [
     price: 135000,
     rating: 4.9,
     reviews: 27,
-    image: "https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?q=80&w=600",
     badge: "Graduation",
     description: "Buket bunga matahari handmade spesial wisuda. Bisa ditambahkan nama atau ucapan custom.",
     details: {
@@ -78,7 +78,7 @@ export const PRODUCTS = [
     price: 120000,
     rating: 4.8,
     reviews: 19,
-    image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=600",
     badge: "",
     description: "Paduan mawar handmade warna-warni yang ceria dari bahan flanel berkualitas tinggi.",
     details: {
@@ -90,36 +90,36 @@ export const PRODUCTS = [
   },
   {
     id: 6,
-    name: "Non-Floral Snack Bouquet",
-    category: "Non-Floral",
-    price: 85000,
-    rating: 4.7,
+    name: "Classic Pink Tulip Bouquet",
+    category: "Custom Medium",
+    price: 110000,
+    rating: 4.9,
     reviews: 34,
-    image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600",
-    badge: "",
-    description: "Buket unik berisi snack dan coklat favorit plus bunga flanel mini. Hadiah kreatif yang bikin senang!",
+    image: "https://cdn.probunga.com/uploads/product/probunga/9065_83_9065.webp",
+    badge: "Popular",
+    description: "Buket bunga tulip pink handmade yang manis dan romantis. Dibuat dengan presisi tinggi memberikan keindahan abadi.",
     details: {
-      flowers: "2-3 tangkai bunga flanel mini + snack pilihan",
-      size: "Tinggi ±35cm",
-      wrapping: "Wrapping paper lucu & pita",
-      care: "Perhatikan tanggal kedaluwarsa snack."
+      flowers: "7 tangkai tulip flanel pink premium & daun hijau",
+      size: "Tinggi ±35cm, Lebar ±25cm",
+      wrapping: "Pink soft wrapping paper & pita satin pink",
+      care: "Tahan selamanya. Cukup bersihkan debu sesekali."
     }
   },
   {
     id: 7,
-    name: "Candy Bouquet Vol. 2",
-    category: "Non-Floral",
-    price: 95000,
-    rating: 4.9,
+    name: "Sweet Pastel Bloom Bouquet",
+    category: "Custom Large",
+    price: 145000,
+    rating: 4.8,
     reviews: 22,
-    image: "https://images.unsplash.com/photo-1481391032119-d89fee407e44?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600",
     badge: "New",
-    description: "Bouquet permen dan coklat premium edisi Vol. 2 dengan tambahan bunga handmade dan dekorasi lucu.",
+    description: "Perpaduan bunga-bunga bernuansa pastel yang lembut dan menenangkan, sangat cocok untuk momen kelulusan.",
     details: {
-      flowers: "Bunga flanel mini + aneka permen & coklat",
-      size: "Tinggi ±30cm",
-      wrapping: "Premium gift wrapping & ribbon",
-      care: "Simpan di suhu ruangan."
+      flowers: "Mawar pastel, daisy, and eucalyptus flanel handmade",
+      size: "Tinggi ±42cm, Lebar ±32cm",
+      wrapping: "Pastel dual-tone wrapping paper & pita satin premium",
+      care: "Simpan di tempat kering dan sejuk."
     }
   },
   {
@@ -129,7 +129,7 @@ export const PRODUCTS = [
     price: 160000,
     rating: 5.0,
     reviews: 15,
-    image: "https://images.unsplash.com/photo-1444021465936-c6ca81d39b84?q=80&w=600",
+    image: "https://i.pinimg.com/736x/32/e5/b9/32e5b915136533a4acb23cf77771d785.jpg",
     badge: "",
     description: "Buket lily putih handmade yang elegan. Setiap kelopak dibentuk satu per satu. Cocok untuk wedding gift.",
     details: {
@@ -146,7 +146,7 @@ export const PRODUCTS = [
     price: 50000,
     rating: 4.7,
     reviews: 41,
-    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=600",
+    image: "https://asset.bloomnation.com/c_pad,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto/v1771075156/vendor/10411/catalog/product/2/0/20260121042911_file_697056176cc97",
     badge: "",
     description: "Buket mini super cute untuk kejutan kecil yang berkesan. Ukuran travel-friendly, harga terjangkau.",
     details: {
@@ -163,7 +163,7 @@ export const PRODUCTS = [
     price: 200000,
     rating: 5.0,
     reviews: 12,
-    image: "https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?q=80&w=600",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lzzuoxu4o6cgfa",
     badge: "Pre-Order",
     description: "Pesanan khusus pre-order untuk desain buket yang lebih detail dan kompleks. Konsultasi desain gratis via DM.",
     details: {

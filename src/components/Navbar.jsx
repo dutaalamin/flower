@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 
 const Navbar = ({ cartCount, onCartClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,14 +9,13 @@ const Navbar = ({ cartCount, onCartClick }) => {
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'Catalog', path: '/catalog' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Track Order', path: '/track-order' }
+    { name: 'About Us', path: '/about' }
   ];
 
   return (
     <>
       <header className="sticky top-0 left-0 right-0 z-40 no-print bg-white border-b border-stone-150/80 py-3 px-6 sm:px-16 shadow-2xs">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="relative max-w-7xl mx-auto flex items-center justify-between">
 
           {/* Brand Logo & Name */}
           <Link
@@ -30,17 +29,17 @@ const Navbar = ({ cartCount, onCartClick }) => {
           </Link>
 
           {/* Center Navigation — Desktop */}
-          <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          <nav className="hidden lg:flex items-center gap-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {menuItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-4.5 py-2 text-[12px] font-sans font-semibold uppercase tracking-widest transition-all duration-200 relative whitespace-nowrap ${
+                  className={`px-2.5 py-2 text-[11px] sm:text-[12px] font-poppins font-medium uppercase tracking-wider transition-all duration-200 relative whitespace-nowrap ${
                     isActive
-                      ? 'text-peony-600'
-                      : 'text-stone-500 hover:text-peony-700'
+                      ? 'text-peony-600 font-bold'
+                      : 'text-stone-500 hover:text-peony-800'
                   }`}
                 >
                   {item.name}
@@ -58,7 +57,7 @@ const Navbar = ({ cartCount, onCartClick }) => {
               className="relative p-2.5 rounded-full hover:bg-peony-50 text-stone-700 hover:text-peony-600 transition-colors focus:outline-none"
               aria-label="Keranjang Belanja"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingCart className="w-5 h-5" />
               {cartCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full bg-peony-600 text-white text-[10px] font-black flex items-center justify-center border-2 border-white shadow-sm animate-pulse">
                   {cartCount}
@@ -69,7 +68,7 @@ const Navbar = ({ cartCount, onCartClick }) => {
             {/* Order Now CTA Button */}
             <Link
               to="/catalog"
-              className="hidden sm:inline-flex px-6 py-2.5 bg-peony-600 hover:bg-peony-700 text-white text-[11px] font-bold uppercase tracking-wider rounded-full transition-all duration-200 shadow-md shadow-peony-600/10 active:scale-95"
+              className="hidden sm:inline-flex px-6 py-2.5 bg-peony-600 hover:bg-peony-700 text-white text-[11px] font-raleway font-bold uppercase tracking-[0.15em] rounded-full transition-all duration-200 shadow-md shadow-peony-600/10 active:scale-95"
             >
               Order Now
             </Link>
@@ -108,9 +107,9 @@ const Navbar = ({ cartCount, onCartClick }) => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`w-full text-left px-5 py-3 rounded-xl text-[12px] font-bold uppercase tracking-wider transition-all ${
+                  className={`w-full text-left px-5 py-2.5 rounded-xl text-[11px] font-poppins font-semibold uppercase tracking-wider transition-all ${
                     isActive
-                      ? 'bg-peony-50 text-peony-600 font-extrabold'
+                      ? 'bg-peony-50 text-peony-600 font-bold'
                       : 'text-stone-600 hover:text-peony-950 hover:bg-stone-50'
                   }`}
                 >
@@ -122,7 +121,7 @@ const Navbar = ({ cartCount, onCartClick }) => {
             <Link
               to="/catalog"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 w-full py-3 bg-peony-600 hover:bg-peony-700 text-white text-[11px] font-bold uppercase tracking-wider rounded-full transition-all text-center"
+              className="mt-4 w-full py-2.5 bg-peony-600 hover:bg-peony-700 text-white text-[11px] font-raleway font-bold uppercase tracking-[0.15em] rounded-full transition-all text-center"
             >
               Order Now
             </Link>

@@ -15,9 +15,9 @@ const Hero = ({ onCatalogClick }) => {
           alt="Beautiful flower bouquet arrangement"
           className="w-full h-full object-cover"
         />
-        {/* Subtle dark overlay for text readability without making it gloomy */}
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        {/* Deep theme green overlay for enhanced contrast and luxury brand consistency */}
+        <div className="absolute inset-0 bg-[#0a2418]/45 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a2418]/60 via-transparent to-[#0a2418]/60"></div>
       </div>
 
       {/* Center content */}
@@ -30,9 +30,9 @@ const Hero = ({ onCatalogClick }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-5"
+          className="mb-8"
         >
-          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.35em] text-white/90 drop-shadow-md">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.4em] text-stone-200 drop-shadow-md">
             Handmade Flowers Bouquet
           </span>
         </motion.div>
@@ -42,8 +42,8 @@ const Hero = ({ onCatalogClick }) => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.35 }}
-          className="font-playfair text-white lowercase leading-none mb-6 drop-shadow-xl"
-          style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+          className="font-playfair text-white lowercase leading-[1.15] mb-8 drop-shadow-2xl"
+          style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)' }}
         >
           bunga cerita
         </motion.h1>
@@ -53,9 +53,9 @@ const Hero = ({ onCatalogClick }) => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55 }}
-          className="font-serif-lux italic text-white/90 text-base sm:text-lg md:text-xl tracking-wide mb-10 drop-shadow-md"
+          className="font-serif-lux italic text-stone-100 text-lg sm:text-xl md:text-2xl tracking-wider mb-14 drop-shadow-[0_3px_10px_rgba(0,0,0,0.6)] font-light"
         >
-          #tellstoriesthroughflowers
+          telling stories through flowers
         </motion.p>
 
 
@@ -69,7 +69,7 @@ const Hero = ({ onCatalogClick }) => {
         >
           <button
             onClick={onCatalogClick}
-            className="px-9 py-3.5 bg-white hover:bg-stone-100 text-[#1a6e4d] font-bold text-[11px] uppercase tracking-[0.18em] rounded-full transition-all duration-300 shadow-xl active:scale-95 hover:-translate-y-0.5"
+            className="px-10 py-3.5 bg-white hover:bg-peony-50 text-[#14422e] font-raleway font-bold text-[11px] sm:text-xs uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-2xl active:scale-95 hover:-translate-y-0.5"
           >
             Explore Catalog
           </button>
