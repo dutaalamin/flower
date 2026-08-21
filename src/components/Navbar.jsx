@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X, User } from 'lucide-react';
 
 const Navbar = ({ cartCount, onCartClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,8 +48,16 @@ const Navbar = ({ cartCount, onCartClick }) => {
             })}
           </nav>
 
-          {/* Right Actions — Cart + Order CTA */}
+          {/* Right Actions — Admin + Cart + Order CTA */}
           <div className="flex items-center gap-3.5">
+
+            <Link
+              to="/admin/dashboard"
+              className="p-2.5 rounded-full hover:bg-peony-50 text-stone-700 hover:text-peony-600 transition-colors focus:outline-none"
+              aria-label="Admin Dashboard"
+            >
+              <User className="w-5 h-5" />
+            </Link>
 
             {/* Cart Icon */}
             <button
