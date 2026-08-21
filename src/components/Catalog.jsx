@@ -204,11 +204,11 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
                     onChange={(e) => setSortBy(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-lg border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] bg-white text-stone-700 cursor-pointer transition-all"
                   >
-                    <option value="popular">Default (Best Seller)</option>
-                    <option value="price-desc">Highest Price</option>
+                    <option value="popular">Default</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
                     <option value="price-asc">Lowest Price</option>
-                    <option value="name-asc">A - Z</option>
-                    <option value="name-desc">Z - A</option>
+                    <option value="price-desc">Highest Price</option>
                   </select>
                   
                   {/* Reset Button */}
