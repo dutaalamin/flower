@@ -31,21 +31,21 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen bg-[#fcfbfa] flex items-center justify-center px-6">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-stone-100 p-8">
-        <div className="text-center mb-8">
-          <h1 className="font-playfair text-3xl text-[#14422e] mb-2">Admin Login</h1>
-          <p className="text-stone-500 text-sm">Masuk untuk mengelola katalog Bunga Cerita</p>
+      <div className="w-full max-w-[480px] bg-white rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 p-10 sm:p-12 -mt-24">
+        <div className="text-center mb-10">
+          <h1 className="font-playfair text-4xl text-[#14422e] mb-3 font-bold">Admin Login</h1>
+          <p className="text-stone-500 text-sm sm:text-base">Masuk untuk mengelola katalog Bunga Cerita</p>
         </div>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-50 text-red-600 text-sm rounded-lg border border-red-100">
+          <div className="mb-8 p-4 bg-red-50 text-red-600 text-sm rounded-xl border border-red-100">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleLogin} className="space-y-5">
+        <form onSubmit={handleLogin} className="space-y-6">
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">
+            <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2">
               Email
             </label>
             <div className="relative">
@@ -54,15 +54,15 @@ const AdminLogin = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] bg-white transition-colors"
+                className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] focus:ring-1 focus:ring-[#1a6e4d] bg-white transition-all"
                 placeholder="admin@bungacerita.com"
               />
-              <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             </div>
           </div>
 
           <div>
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">
+            <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2">
               Password
             </label>
             <div className="relative">
@@ -71,19 +71,19 @@ const AdminLogin = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] bg-white transition-colors"
+                className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:border-[#1a6e4d] focus:ring-1 focus:ring-[#1a6e4d] bg-white transition-all"
                 placeholder="••••••••"
               />
-              <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             </div>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 mt-4 bg-[#1a6e4d] hover:bg-[#14422e] text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center"
+            className="w-full py-4 mt-8 bg-[#1a6e4d] hover:bg-[#14422e] text-white rounded-xl text-sm font-bold uppercase tracking-widest transition-all shadow-lg shadow-[#1a6e4d]/20 hover:shadow-xl active:scale-[0.98] flex items-center justify-center"
           >
-            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Login'}
+            {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Login to Dashboard'}
           </button>
         </form>
       </div>
