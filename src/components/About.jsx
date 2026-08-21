@@ -62,9 +62,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* Mission & Vision */}
+      {/* Mission, Vision & Stats combined */}
       <div className="py-20 sm:py-24 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 mb-16 sm:mb-20">
           <div className="text-center md:text-left">
             <span className="font-raleway text-[10px] font-bold tracking-[0.25em] text-[#1a6e4d] uppercase block mb-3">
               Our Mission
@@ -88,23 +88,21 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>
 
-      <div className="py-16 sm:py-20 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">500+</p>
             <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Happy Customers</p>
           </div>
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">1K+</p>
             <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Bouquets Crafted</p>
           </div>
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">100%</p>
             <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Handmade</p>
           </div>
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <p className="text-3xl sm:text-4xl font-extrabold text-[#1a6e4d] mb-1 tracking-tight">5.0</p>
             <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase">Average Rating</p>
           </div>
