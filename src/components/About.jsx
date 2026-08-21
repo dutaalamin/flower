@@ -64,7 +64,7 @@ const About = () => {
 
       {/* Mission, Vision & Stats combined */}
       <div className="py-20 sm:py-24 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 mb-16 sm:mb-20">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 mb-24 sm:mb-28">
           <div className="text-center md:text-left">
             <span className="font-raleway text-[10px] font-bold tracking-[0.25em] text-[#1a6e4d] uppercase block mb-3">
               Our Mission
