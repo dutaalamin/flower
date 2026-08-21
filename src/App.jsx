@@ -9,6 +9,8 @@ import ProductDetail from './pages/ProductDetail';
 import CheckoutPage from './pages/Checkout';
 import Footer from './components/Footer';
 import TermsOfService from './pages/TermsOfService';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 
 import CartDrawer from './components/CartDrawer';
 
@@ -138,7 +140,10 @@ function AppContent() {
             path="/terms" 
             element={<TermsOfService />} 
           />
-        </Routes>
+          {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      </Routes>
       </main>
 
       {/* Footer */}

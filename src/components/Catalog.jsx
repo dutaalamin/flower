@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, RotateCcw, ShoppingCart, ArrowRight, Eye, Plus } from 'lucide-react';
-import { PRODUCTS } from '../data/mockData';
+import { PRODUCTS as MOCK_PRODUCTS } from '../data/mockData';
+import { supabase } from '../lib/supabaseClient';
 
 const CATEGORIES = ['All', 'Custom Large', 'Custom Medium', 'Custom Small', 'Custom PO'];
 
@@ -12,7 +13,25 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
   const [sortBy, setSortBy] = useState('popular');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase.from('products').select('*').order('id', { ascending: false });
+    if (error || !data || data.length === 0) {
+      // Fallback to mock data if database is empty or fails
+      setProducts(MOCK_PRODUCTS);
+    } else {
+      setProducts(data);
+    }
+    setLoading(false);
+  };
 
   useEffect(() => {
     const handleFilterEvent = (e) => {
@@ -25,7 +44,7 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
   }, []);
 
   useEffect(() => {
-    let result = [...PRODUCTS];
+    let result = [...products];
 
     if (selectedCategory !== 'All') {
       result = result.filter(p => p.category === selectedCategory);
@@ -77,7 +96,7 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
     }
 
     setFilteredProducts(result);
-  }, [selectedCategory, searchQuery, sortBy, minPrice, maxPrice, isPreview]);
+  }, [selectedCategory, searchQuery, sortBy, minPrice, maxPrice, isPreview, products]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('id-ID', {
@@ -233,8 +252,10 @@ const Catalog = ({ onAddToCart, isPreview = false }) => {
           </div>
         )}
 
-        {/* Product Grid */}
-        {filteredProducts.length === 0 ? (
+        {/* Products Grid */}
+        {loading ? (
+          <div className="text-center py-20 text-stone-500">Loading products...</div>
+        ) : filteredProducts.length === 0 ? (
           <div className="py-16 text-center">
             <p className="text-stone-500 text-sm mb-4">No products found matching filters.</p>
             <button

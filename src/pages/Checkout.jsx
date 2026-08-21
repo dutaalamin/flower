@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ShoppingBag, Send, ChevronLeft, Minus, Plus } from 'lucide-react';
+import { supabase } from '../lib/supabaseClient';
+import { ShoppingBag, Send, ChevronLeft, Minus, Plus, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const CheckoutPage = ({ cart, clearCart, updateQuantity, removeFromCart }) => {
@@ -23,6 +24,7 @@ const CheckoutPage = ({ cart, clearCart, updateQuantity, removeFromCart }) => {
     cardMessage: ''
   });
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -93,6 +95,26 @@ const CheckoutPage = ({ cart, clearCart, updateQuantity, removeFromCart }) => {
     // Encode URL for WhatsApp
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=6287798765432&text=${encodedMessage}`;
+
+    // Insert order to Supabase
+    setIsSubmitting(true);
+    try {
+      await supabase.from('orders').insert([{
+        order_id: orderId,
+        customer_name: formData.customerName,
+        customer_phone: formData.customerPhone,
+        recipient_name: formData.recipientName,
+        delivery_address: formData.deliveryAddress,
+        delivery_date: formData.deliveryDate,
+        delivery_time: formData.deliveryTime,
+        card_message: formData.cardMessage,
+        items: cart,
+        subtotal: subtotal
+      }]);
+    } catch (err) {
+      console.error("Error logging order to Supabase", err);
+    }
+    setIsSubmitting(false);
 
     // Confetti effect!
     confetti({
@@ -351,12 +373,19 @@ const CheckoutPage = ({ cart, clearCart, updateQuantity, removeFromCart }) => {
                       <span className="font-playfair text-base sm:text-lg font-bold text-[#14422e]">{formatPrice(subtotal)}</span>
                     </div>
 
-                    <button
+                      <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full py-3 bg-[#1a6e4d] hover:bg-[#14422e] text-white font-raleway font-bold text-[11px] uppercase tracking-[0.15em] rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
                     >
-                      <Send className="w-3.5 h-3.5" />
-                      Send to WhatsApp
+                      {isSubmitting ? (
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      ) : (
+                        <>
+                          <Send className="w-3.5 h-3.5" />
+                          Send to WhatsApp
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>
