@@ -45,16 +45,7 @@ const AdminLogin = () => {
         <span className="hidden sm:inline">Return to Store</span>
       </Link>
 
-      <div className="w-full max-w-[440px] z-10 relative">
-        {/* Brand / Logo */}
-        <div className="mb-10 text-center">
-          <Link to="/" className="inline-block">
-            <span className="font-playfair text-4xl sm:text-5xl font-bold text-[#14422e] tracking-tight hover:text-[#1a6e4d] transition-colors">
-              bunga cerita
-            </span>
-          </Link>
-        </div>
-
+      <div className="w-full max-w-[440px] z-10 relative -mt-10">
         {/* Login Card */}
         <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-2xl shadow-stone-200/50 border border-white p-8 sm:p-10">
           <div className="text-center mb-8">
