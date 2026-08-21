@@ -98,9 +98,13 @@ const About = () => {
             <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">1K+</p>
             <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Bouquets Crafted</p>
           </div>
-          <div className="text-center md:text-right">
+          <div className="text-center md:text-left">
             <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">100%</p>
             <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Handmade</p>
+          </div>
+          <div className="text-center md:text-right">
+            <p className="text-4xl sm:text-5xl font-extrabold text-[#1a6e4d] mb-2 tracking-tight">5.0</p>
+            <p className="text-[11px] sm:text-xs text-stone-400 tracking-wider uppercase font-semibold">Average Rating</p>
           </div>
         </div>
       </div>
