@@ -41,7 +41,7 @@ const CheckoutPage = ({ cart, clearCart, updateQuantity, removeFromCart }) => {
     }).format(price);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Generate Order ID (BC-XXXXX)
