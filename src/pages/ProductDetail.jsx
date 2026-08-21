@@ -152,7 +152,7 @@ const ProductDetail = ({ addToCart }) => {
             </div>
 
             {/* Options & Action Form */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6 mt-6">
               <div>
                 <label className="block text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-2">
                   Select Wrapping Style
